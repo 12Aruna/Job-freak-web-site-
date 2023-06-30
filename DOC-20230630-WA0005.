@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "bold", sans-serif;}
+
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #111;
+  width: 30%;
+  height: 300px;
+}
+
+
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: grey;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.tab button:hover {
+  background-color: blue;
+}
+
+
+.tab button.active {
+  background-color: #111;
+}
+
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+</style>
+</head>
+<body>
+
+<h2> Left Panel</h2>
+
+<div class="tab">
+  <button class="tablinks" onclick="leftpanel(event, 'Home')" id="defaultOpen">Home</button>
+  <button class="tablinks" onclick="leftpanel(event, 'Contact')">Contact</button>
+  <button class="tablinks" onclick="leftpanel(event, 'Information')">Information</button>
+   <button class="tablinks" onclick="leftpanel(event, 'Guid')">Guid</button>
+</div>
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Welcome to Job Freak website, now this company hiring a Front End Development internship</p>
+  <p><b>Some details about Job Freak company</b></p>
+  <p>About Us
+At Job Freak We Post daily updates on internships and jobs postings ! !
+Our aim is to empower the youth of our country and make them Self-dependent. By providing them job/internships all kinds of opportunities from various sectors, sharing knowledge and make them competent enough so that they could excel in any field. If you have any query regrading Site, Advertisement and any other issue, please feel free to</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+    <form>
+
+    <label for="fname">Full Name:</label>
+    <input type="text" id="fname" name="firstname" style="width:600px" placeholder="Your name..">
+<br>
+<p></p>
+
+    <label for="email">Email Id:</label>
+    <input type="text" id="lname" name="email"style="width:600px"  placeholder="Your email id..">
+<br>
+<p></p>
+    <label for="country" >Country:</label>
+    <select id="country" name="country"style="width:600px" >
+      <option value="australia">India</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+<br>
+<p></p>
+    <label for="subject">Subject</label>
+
+
+    <textarea id="subject" name="subject" placeholder="Write something.." style="width:600px,height:30px"></textarea>
+<br>
+<p></p>
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+<div id="Information" class="tabcontent">
+  <h3><i>Some Information about job Freak</i></h3>
+  <p>At Job Freak, we post daily updates on internships and job postings! Our aim is to empower the youth of our country and make them self-dependent by providing them with jobs/internships and all kinds of opportunities from various sectors.
+Activity on Internshala</p>
+</div>
+
+<div id="Guid" class="tabcontent">
+ <h3>About the work from home job/internship</h3>
+<p>Selected intern's day-to-day responsibilities include:</p>
+
+<p>1. Create web pages and multiple functionality
+<p>2. Manage the code documentation</p>
+<p>3. Enhance the features of the web application</p>
+
+
+
+</div>
+<script>
+function leftpanel(evt, components) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(components).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
